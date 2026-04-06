@@ -120,12 +120,52 @@ h1,h2,h3,h4{margin:0}
 .doc strong{font-weight:700}
 .doc a{color:var(--primary);font-weight:600}
 .doc a:hover{text-decoration:underline}
-.contact-box{background:var(--dark-bg);border-radius:1.25rem;padding:2rem;margin-top:3rem;color:#fff}
-.contact-box h2{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:1.25rem;padding:0;border:none}
-.contact-row{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.875rem;font-size:.9rem;color:var(--accent)}
-.contact-row svg{width:1rem;height:1rem;fill:var(--primary);flex-shrink:0;margin-top:.1rem}
-.contact-row a{color:var(--accent);transition:color .2s}
-.contact-row a:hover{color:var(--primary)}
+.contact-box {
+    background: var(--dark-bg);
+    border-radius: 1.25rem;
+    padding: 1.5rem; /* Reducimos de 2rem a 1.5rem para ganar espacio en los lados */
+    margin-top: 3rem;
+    color: #fff;
+    width: 100%; /* Asegura que se adapte al ancho disponible */
+    box-sizing: border-box; /* Crucial: incluye el padding dentro del cálculo del ancho */
+}
+
+.contact-box h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    padding: 0;
+    border: none;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center; /* Cambiamos de flex-start a center para mejor alineación visual */
+    gap: .75rem;
+    margin-bottom: .875rem;
+    font-size: .85rem; /* Bajamos ligeramente de .9rem para ayudar al ajuste */
+    color: var(--accent);
+    word-break: break-all; /* Esto obliga al email a saltar de línea si no cabe en el ancho del celular */
+}
+
+.contact-row svg {
+    width: 1rem;
+    height: 1rem;
+    fill: var(--primary);
+    flex-shrink: 0; /* Evita que el icono se aplaste cuando el texto es largo */
+}
+
+.contact-row a, .contact-row span {
+    color: var(--accent);
+    transition: color .2s;
+    text-decoration: none;
+    flex: 1; /* Permite que el texto tome todo el espacio sobrante sin empujar el cuadro */
+}
+
+.contact-row a:hover {
+    color: var(--primary);
+}
   </style>
 </head>
 <body>
